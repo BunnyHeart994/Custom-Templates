@@ -3,16 +3,21 @@ import java.lang.*;
 
 public class ArrayControl
 {
+    private static final Scanner scan = new Scanner(System.in);
     /*public static void main(String[] args)//main method, for tests
     {
-        Object[] arr = new Object[0];
-        System.out.println("before: " + arr.length);
+        Object[] arr = new Object[1];
+        //System.out.println("before: " + arr.length);
 
-        arr = addArrSlotsWCopy(arr, 1);
-        arr = toIntArr(arr);
-        System.out.println("after: " + arr.length);
-        arr[0] = 1;
-        System.out.println("value at [0]: " + arr[0]);
+        //arr = addArrSlotsWCopy(arr, 1);
+        //arr = toIntArr(arr);
+        //System.out.println("after: " + arr.length);
+        System.out.println("'arr' type: " + arr.getClass());
+        arr = changeArrType(arr, "string");
+        //arr[0] = 1;
+        System.out.println("value at [0]: " + arr[0] + "\n" + "'arr' type: " + arr.getClass());
+        arr = changeArrType(arr, scan.nextLine());
+        System.out.println("'arr' type: " + arr.getClass());
     }*/
 
     public static Object[] manualAddArrSlot(Object[] mainArr)
@@ -42,8 +47,38 @@ public class ArrayControl
     {
         return target = new Integer[target.length];
     }
-    public static Object[] changeArrType(Object[] target)//NEW IMPORTANT
+
+    public static Object[] changeArrType(Object[] target, String type)//NEW IMPORTANT
     {
-        return target;
+        /*do
+        {
+            if (type.equalsIgnoreCase("short"))
+                return target = new Short[target.length];
+            else if (type.equalsIgnoreCase("int"))
+                return target = new Integer[target.length];
+            else if (type.equalsIgnoreCase("long"))
+                return target = new Long[target.length];
+            else if (type.equalsIgnoreCase("string"))
+                return target = new String[target.length];
+            else if (type.equalsIgnoreCase("char"))
+                return target = new Character[target.length];
+            else if (type.equalsIgnoreCase("bool"))
+                return target = new Boolean[target.length];
+            else
+            {
+                System.out.println("\nARRAY TYPE CONVERSION ERROR\nRETURNING null");
+                return null;
+            }
+        } while(true);*/
+        return switch (type)
+        {
+            case "short": yield target = new Short[target.length];
+            case "int": yield target = new Integer[target.length];
+            case "long": yield target = new Long[target.length];
+            case "string": yield target = new String[target.length];
+            case "char": yield target = new Character[target.length];
+            case "bool": yield target = new Boolean[target.length];
+            default: System.out.println("\nARRAY TYPE CONVERSION ERROR\nRETURNING null"); yield null;
+        };
     }
 }
