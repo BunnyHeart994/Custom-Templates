@@ -4,7 +4,7 @@ import java.lang.*;
 public class ArrayControl
 {
     private static final Scanner scan = new Scanner(System.in);
-    /*public static void main(String[] args)//main method, for tests
+    /*public static void main(String[] args) //main method, for tests
     {
         Object[] arr = new Object[1];
         //System.out.println("before: " + arr.length);
@@ -36,20 +36,24 @@ public class ArrayControl
     {
         return Arrays.copyOf(mainArr, (mainArr.length + times));
     }
-    public static Object[] toStringArr(Object[] target)
-    {
-        target = new String[target.length];
-        return target;
-    }
-
+    /*A BRIEF DEMO OF WHAT "changeArrType" DOES
     //TRANSFORMS AN Object ARRAY (target) INTO AN Integer ARRAY (toIntArr)
     public static Object[] toIntArr(Object[] target)
     {
         return target = new Integer[target.length];
-    }
-
-    public static Object[] changeArrType(Object[] target, String type)//NEW IMPORTANT
+    }*/
+    public static Object[] changeArrType(Object[] target, String type) //NEW IMPORTANT
     {
+        return switch (type)
+        {
+            case "short": yield target = new Short[target.length];
+            case "int": yield target = new Integer[target.length];
+            case "long": yield target = new Long[target.length];
+            case "string": yield target = new String[target.length];
+            case "char": yield target = new Character[target.length];
+            case "bool": yield target = new Boolean[target.length];
+            default: System.out.println("\nARRAY TYPE CONVERSION ERROR\nRETURNING null"); yield null;
+        };
         /*do
         {
             if (type.equalsIgnoreCase("short"))
@@ -70,15 +74,5 @@ public class ArrayControl
                 return null;
             }
         } while(true);*/
-        return switch (type)
-        {
-            case "short": yield target = new Short[target.length];
-            case "int": yield target = new Integer[target.length];
-            case "long": yield target = new Long[target.length];
-            case "string": yield target = new String[target.length];
-            case "char": yield target = new Character[target.length];
-            case "bool": yield target = new Boolean[target.length];
-            default: System.out.println("\nARRAY TYPE CONVERSION ERROR\nRETURNING null"); yield null;
-        };
     }
 }
