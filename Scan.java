@@ -1,47 +1,46 @@
-import java.lang.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Scan
 {
-    //private static int scannedInt;
-    //private static String scannedString;
+    private static final Scanner scan = new Scanner(System.in);
 
-    //Prints text, scans and returns integer
+    //Next 4 methods below prints text, scans input and returns method's type
     public static int integer(String text)
     {
         Print.print(text);
-        Scanner s = new Scanner(System.in);
-        return Integer.parseInt(s.nextLine());
+        return scan.nextInt();
     }
-    //Prints text, scans and returns double:
     public static double floatingPoint(String text)
     {
         Print.print(text);
-        Scanner s = new Scanner(System.in);
-        return Double.parseDouble(s.nextLine());
+        return scan.nextDouble();
     }
-    //Prints text, scans and returns String
     public static String string(String text)
     {
         Print.print(text);
-        Scanner s = new Scanner(System.in);
-        return s.nextLine();
-    }
-
-    public static int integer()
-    {
-        Scanner s = new Scanner(System.in);
-        return Integer.parseInt(s.nextLine());
-    }
-    public static String string()
-    {
-        Scanner s = new Scanner(System.in);
-        return s.nextLine();
+        return scan.nextLine();
     }
     public static char character(String text)
     {
         Print.print(text);
-        Scanner s = new Scanner(System.in);
-        return s.nextLine().charAt(0);
+        return scan.nextLine().charAt(0);
+    }
+
+    //Next 4 overloaded methods below scan input and return method's type
+    public static int integer()
+    {
+        return scan.nextInt();
+    }
+    public static double floatingPoint()
+    {
+        return scan.nextDouble();
+    }
+    public static String string()
+    {
+        return scan.nextLine();
+    }
+    public static char character()
+    {
+        return scan.nextLine().charAt(0);
     }
 }

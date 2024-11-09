@@ -1,6 +1,3 @@
-import java.util.*;
-import java.lang.*;
-
 public class Print
 {
 	public static void print(Object text)
