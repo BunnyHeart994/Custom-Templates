@@ -1,3 +1,5 @@
+package com.templates.source;
+
 import java.util.Scanner;
 
 public class Scan

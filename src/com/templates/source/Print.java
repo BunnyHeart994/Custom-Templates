@@ -1,3 +1,5 @@
+package com.templates.source;
+
 public class Print
 {
 	public static void print(Object text)
