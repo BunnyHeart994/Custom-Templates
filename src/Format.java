@@ -1,7 +1,3 @@
-package com.templates.source;
-
-import com.templates.source.Print;
-
 import java.util.Formatter;
 
 public class Format

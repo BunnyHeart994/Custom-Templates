@@ -1,5 +1,3 @@
-package com.templates.source;
-
 import java.util.Arrays;
 import java.util.Scanner;
 

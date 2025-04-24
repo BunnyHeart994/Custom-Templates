@@ -1,5 +1,3 @@
-package com.templates.source;
-
 import java.util.Scanner;
 
 public class Scan
@@ -10,17 +8,17 @@ public class Scan
     public static int integer(String text)
     {
         Print.print(text);
-        return scan.nextInt();
+        return Integer.parseInt(scan.nextLine());
     }
     public static short aShort(String text)
     {
         Print.print(text);
-        return scan.nextShort();
+        return Short.parseShort(scan.nextLine());
     }
     public static double floatingPoint(String text)
     {
         Print.print(text);
-        return scan.nextDouble();
+        return Double.parseDouble(scan.nextLine());
     }
     public static String string(String text)
     {

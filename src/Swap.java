@@ -1,5 +1,3 @@
-package com.templates.source;
-
 public class Swap {
     public static Object a, b;
 
