@@ -34,15 +34,15 @@ public class Scan
     //Overloaded methods below scan input and return method's type
     public static int integer()
     {
-        return scan.nextInt();
+        return Integer.parseInt(scan.nextLine());
     }
     public static short aShort()
     {
-        return scan.nextShort();
+        return Short.parseShort(scan.nextLine());
     }
     public static double floatingPoint()
     {
-        return scan.nextDouble();
+    	return Double.parseDouble(scan.nextLine());
     }
     public static String string()
     {
