@@ -1,6 +1,6 @@
 import java.util.Formatter;
 
-public class Format
+public class CustomFormat
 {
     public static void formatSO(String string, Object... object)
     {
